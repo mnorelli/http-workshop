@@ -1,24 +1,34 @@
+<!--
+Market: SF
+-->
+
+![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)
+
 # Angular $http
 
-### Objectives
+### Why is this important?
+*This workshop is important because:*
+As you have been learning, Angular has its own way of doing things. $http is how Angular handles web requests. It is to Angular what $.ajax, $.get, $.post etc. is to jQuery..  
 
-- Use $http to access an API resource, rather than use hardcoded data
+### What are the objectives?
+*After this workshop, developers will be able to:*
 
-### Preparation
+- Use $http to access an API resource, rather than use hardcoded data.
+
+### Where should we be now?
+*Before this workshop, developers should already be able to:*
 
 - Be able to start up a Node.js app
 - Be able to create an Angular app with controllers
 - Understand AJAX & RESTful routing
 
-## Intro (10 mins)
+## Intro
 
 We've only been working with hardcoded data so far. Today that changes; it's time to kick it up a notch.
 
 We're going to learn a little about two different functionalities in Angular that will allow us to start communicating with real data, accessed through an API. You'll need to dust off your knowledge of RESTful routes & AJAX, but hopefully that's a good thing.
 
-Now, since we're going to be interacting with an API, in an ideal world we'd force you to write one first. You totally could. But _because_ you could, and because we'd rather skip to the new stuff, let's use a pre-built backend for this lesson.
-
-We want to make it fast, so we've already made you a sweet little Node API.
+We are going to be using an external JSON API. Next week we will go over making strictly JSON API's in both Rails and Express, but today we will use a  little Node API we built for you.
 
 Now, real quick – we might want a little seed data. Take a minute and make some POST requests in CURL or whatever you like to add some presidents to our database. If you need some examples:
 
@@ -37,18 +47,16 @@ curl -H "Content-Type: application/json" -X POST -d '{"name": "George Washington
 ```
 Once you have some, do a quick `GET` request to `http://localhost:3000/presidents` and make sure you've got some JSON.
 
-## Demo of Starter Code (5 mins)
+## Demo of Starter Code
 
-Okay, so we've included a bunch of starter code that looks quite a bit like the code you've already written. There's a controller, with some hardcoded data, listing out some of the Presidents in the United States. Hopefully [Wikipedia](https://en.wikipedia.org/wiki/List_of_Presidents_of_the_United_States) is accurate, 'cuz who knows stuff like that off the top of their head?
+Okay, so we've included a bunch of starter code that looks quite a bit like the code you've already written. There's a controller, with some hardcoded data, listing out some of the Presidents in the United States.
 
-It's our job to mush together this little API we have, and our Angular application.
-
-We'll do this with two different methods, and this one is the first. The next will be in the next lesson.
+It's our job to connect this little API we have, and our Angular application.
 
 <img width="752"  src="https://cloud.githubusercontent.com/assets/25366/9017871/7cf4a79e-378e-11e5-85d8-d018f0a7ab21.png">
 
 
-## Hitting an API with $http - Codealong (30 mins)
+## Hitting an API with $http
 
 The simplest starting point will be to switch our hardcoded array of presidents with the one living in our new API.
 
@@ -202,15 +210,24 @@ Try refreshing your browser, let's see if it worked!
 
 <img width="752"  src="https://cloud.githubusercontent.com/assets/25366/9017871/7cf4a79e-378e-11e5-85d8-d018f0a7ab21.png">
 
+<details>
+  <summary>Describe the difference between $http in Angular and $.ajax in jQuery </summary>
+  <p>They both do the same thing: Handle  XMLHttpRequests to make http calls to the web from the client side.</p>
+</details>
 
-## Independent Practice (20 minutes)
+## Independent Practice
 
 Now that we've got GETing down, it's up to you to try POSTing. Just like any RESTful API, you can add a new president by POSTing to the correct URL. You'll need to modify your controller action to send a new president from the form to our API, and probably look up the Angular documentation to figure out how to do it.
 
 We'll be walking around helping you if you get stuck. In the last few minutes we can see how many people got it!
 
-## Conclusion (5 mins)
+## Conclusion
 - How do you inject dependencies into an Angular controller?
 - How do you use $http to do a GET request?
 - Why did we start using `self` instead of `this`?
 - How do you do a POST request?
+
+
+## Additional Resources
+- [The Docs](https://docs.angularjs.org/api/ng/service/$http)
+- [Promises Explained](http://andyshora.com/promises-angularjs-explained-as-cartoon.html)
